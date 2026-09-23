@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Denis Gitonga · Senior Software Engineer</title>
+<meta name="description" content="Denis Gitonga: Senior Software Engineer building AI-enabled enterprise applications in banking, payments, agritech and insurance. Java, Kotlin, Spring Boot, Angular, RAG.">
+<meta property="og:title" content="Denis Gitonga · Senior Software Engineer">
+<meta property="og:description" content="Building AI-enabled enterprise applications: RAG, conversational AI, reactive Java/Spring and Angular.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dbetta.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230f1b2d'/><text x='50%' y='56%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='30' fill='%237fe0dc'>DG</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f8fa; --surface: #ffffff; --ink: #1c2330; --muted: #5b6573; --rule: #dde3ea;
+    --navy: #0f1b2d; --teal: #0c8f8f; --teal-bright: #7fe0dc; --teal-soft: #e3f5f4; --chip: #eef2f6;
+    --hero-ink: #ffffff; --hero-muted: #c9d3df;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b1320; --surface: #111c2d; --ink: #e6ebf2; --muted: #9aa6b5; --rule: #22324a;
+      --teal: #3cc6c1; --teal-soft: #12303a; --chip: #1a2638;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b1320; --surface: #111c2d; --ink: #e6ebf2; --muted: #9aa6b5; --rule: #22324a;
+    --teal: #3cc6c1; --teal-soft: #12303a; --chip: #1a2638;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Inter", system-ui, -apple-system, sans-serif;
+         font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--teal); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1, h2, h3, .display { font-family: "Space Grotesk", "Inter", sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(15,27,45,.92); backdrop-filter: blur(8px); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  nav .logo { font-family: "Space Grotesk", sans-serif; font-weight: 700; color: #fff; letter-spacing: .3px; }
+  nav .logo span { color: var(--teal-bright); }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  nav ul a { color: var(--hero-muted); font-size: 14px; font-weight: 500; }
+  nav ul a:hover { color: #fff; text-decoration: none; }
+
+  /* Hero */
+  .hero { background: radial-gradient(circle at 85% 0%, rgba(15,163,163,.45) 0, rgba(15,163,163,0) 420px), var(--navy);
+          color: var(--hero-ink); padding: 72px 0 96px; }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; color: var(--teal-bright); border: 1px solid rgba(127,224,220,.45);
+             border-radius: 999px; padding: 3px 12px; margin-bottom: 18px; }
+  .hero h1 { font-size: clamp(38px, 7vw, 64px); line-height: 1.02; margin: 0 0 14px; letter-spacing: -1px; }
+  .hero .lead { font-size: clamp(18px, 2.4vw, 22px); color: var(--hero-muted); max-width: 720px; margin: 0 0 28px; }
+  .hero .lead b { color: #fff; font-weight: 600; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 8px; font-weight: 600; font-size: 15px; }
+  .btn:hover { text-decoration: none; }
+  .btn.primary { background: var(--teal-bright); color: var(--navy); }
+  .btn.ghost { border: 1px solid rgba(255,255,255,.3); color: #fff; }
+  .btn svg { width: 18px; height: 18px; fill: currentColor; }
+  .chips-hero { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips-hero span { font-size: 13px; color: #d8f5f3; border: 1px solid rgba(127,224,220,.35); border-radius: 999px; padding: 3px 12px; }
+
+  /* Impact */
+  .impact { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--surface); border: 1px solid var(--rule);
+            border-bottom: 3px solid var(--teal); border-radius: 12px; margin-top: -48px; position: relative; overflow: hidden; }
+  .impact div { padding: 20px 22px; border-right: 1px solid var(--rule); }
+  .impact div:last-child { border-right: 0; }
+  .impact b { display: block; font-family: "Space Grotesk", sans-serif; font-size: 28px; line-height: 1.1; color: var(--ink); }
+  .impact span { font-size: 14px; color: var(--muted); }
+
+  section { padding: 64px 0 8px; }
+  h2 { font-size: 28px; line-height: 1.2; margin: 0 0 24px; display: flex; align-items: center; gap: 12px; }
+  h2::before { content: ""; width: 22px; height: 4px; border-radius: 2px; background: var(--teal); }
+  .intro { max-width: 760px; color: var(--muted); font-size: 17px; margin: -8px 0 28px; }
+
+  /* Cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+  .card { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; }
+  .card h3 { font-size: 19px; margin: 0 0 4px; }
+  .card .where { font-size: 13px; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+  .card p { margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+  .card .tags { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags span { font-size: 12px; background: var(--chip); border-radius: 4px; padding: 2px 8px; color: var(--ink); }
+  .badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; border-radius: 999px;
+           padding: 2px 9px; margin-bottom: 12px; align-self: flex-start; }
+  .badge.ai { background: var(--navy); color: var(--teal-bright); }
+  .badge.live { background: #dff3e6; color: #1b7a3d; }
+  .badge.wip { background: #fdf0d9; color: #95600a; }
+
+  /* Timeline */
+  .timeline { position: relative; margin-left: 8px; border-left: 2px solid var(--rule); }
+  .role { position: relative; padding: 0 0 30px 28px; }
+  .role::before { content: ""; position: absolute; left: -8px; top: 6px; width: 14px; height: 14px; border-radius: 50%;
+                  background: var(--surface); border: 3px solid var(--teal); }
+  .role-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; align-items: baseline; }
+  .role h3 { font-size: 19px; margin: 0; }
+  .role .when { font-size: 14px; color: var(--muted); font-weight: 500; }
+  .role .org { color: var(--teal); font-weight: 600; font-size: 15px; margin: 2px 0 8px; }
+  .role ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  .role li { margin-bottom: 5px; }
+  .role li b { color: var(--ink); font-weight: 600; }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .skills h3 { font-size: 15px; margin: 0 0 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; }
+  .skills .tags span { font-size: 13px; padding: 4px 10px; }
+  .skills .ai .tags span { background: var(--navy); color: var(--teal-bright); }
+
+  /* Contact */
+  .contact { background: var(--navy); color: #fff; border-radius: 16px; padding: 40px; margin: 64px 0 40px;
+             display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+  .contact h2 { color: #fff; margin: 0 0 6px; }
+  .contact p { margin: 0; color: var(--hero-muted); }
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 0 0 32px; }
+
+  @media (max-width: 760px) {
+    nav ul { display: none; }
+    .hero { padding: 48px 0 84px; }
+    .impact { grid-template-columns: 1fr 1fr; }
+    .impact div:nth-child(2) { border-right: 0; }
+    .impact div:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .impact div { padding: 16px; }
+    .impact b { font-size: 22px; }
+    .contact { padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">denis<span>.gitonga</span></a>
+    <ul>
+      <li><a href="#ai">AI Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Senior Software Engineer · Nairobi, Kenya</span>
+    <h1>Denis Gitonga</h1>
+    <p class="lead">I build <b>AI-enabled enterprise applications</b>: RAG assistants that explain credit decisions, conversational APIs for lab testing, and DSLs that turn business rules into configuration. I've spent 9+ years on this kind of work across <b>banking, payments, agritech and insurance</b>.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://www.linkedin.com/in/denis-gitonga-083ba3a7/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/DBetta" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></svg>
+        GitHub</a>
+      <a class="btn ghost" href="mailto:denisbgitonga@gmail.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.24-8 5-8-5V6l8 5 8-5v2.24z"/></svg>
+        Email</a>
+    </div>
+    <div class="chips-hero"><span>RAG &amp; Conversational AI</span><span>Fintech &amp; Credit</span><span>InsurTech DSLs</span><span>Java · Kotlin · Spring</span><span>Angular</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="impact">
+    <div><b>70%</b><span>cut in log ingestion &amp; logging cost at Equity Bank</span></div>
+    <div><b>1M+ in &lt;10 min</b><span>records validated &amp; processed with Spring Batch at Mastercard</span></div>
+    <div><b>3 AI builds</b><span>credit-decision RAG, lab-testing chat API, AI-guided insurance setup</span></div>
+    <div><b>80%</b><span>less manual reporting for KEBS, countrywide</span></div>
+  </div>
+
+  <section id="ai">
+    <h2>AI in real business systems</h2>
+    <p class="intro">I focus on putting AI where it earns its keep: inside the systems people already depend on, answering the questions they actually ask.</p>
+    <div class="grid">
+      <article class="card">
+        <span class="badge ai">RAG · Banking</span>
+        <h3>Credit decision assistant</h3>
+        <div class="where">Equity Bank · in progress</div>
+        <p>A retrieval-augmented assistant on the credit scoring platform. Staff and customers can ask why they got a given score or why an application errored, and get a self-service answer instead of raising a support ticket.</p>
+        <div class="tags"><span>RAG</span><span>LLM</span><span>Spring WebFlux</span><span>Credit scoring</span></div>
+      </article>
+      <article class="card">
+        <span class="badge ai">Conversational AI · Lab testing</span>
+        <h3>"Why isn't my test ready?"</h3>
+        <div class="where">KEBS · Analabs · SKOL (Rwanda)</div>
+        <p>Laboratory test data is embedded behind a chat API that client systems integrate with. Managers get a 360° view of the testing pipeline: where each test is, why it's stuck, and what to improve.</p>
+        <div class="tags"><span>Embeddings</span><span>Chat API</span><span>Integrations</span></div>
+      </article>
+      <article class="card">
+        <span class="badge ai">AI-guided setup · Insurance</span>
+        <h3>Premium DSL with an AI co-pilot</h3>
+        <div class="where">Personal project · in progress</div>
+        <p>A domain-specific language for insurance premium computation, aimed at insurers, brokerages and agencies. An AI-guided flow walks users through configuring premium rules, so developers can reimagine insurance products in code.</p>
+        <div class="tags"><span>DSL design</span><span>LLM</span><span>InsurTech</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="role">
+        <div class="role-head"><h3>Senior Java Software Engineer</h3><span class="when">Jan 2026 – Present</span></div>
+        <div class="org">Equity Bank · Credit scoring platform</div>
+        <ul>
+          <li>Integrating a <b>RAG-based assistant</b> that explains credit outcomes and application errors to staff and customers.</li>
+          <li>Diagnosed thread contention in a Spring <b>WebFlux</b> service, stabilised production with <i>boundedElastic</i> offloading, then worked with the team on a fully non-blocking rewrite.</li>
+          <li>Cut log ingestion volume and logging costs by <b>70%</b>.</li>
+          <li>Designing a <b>workflow DSL</b> that makes credit scoring rule-based, so business rules are configured, not coded.</li>
+        </ul>
+      </div>
+      <div class="role">
+        <div class="role-head"><h3>Software Engineering Consultant: AI &amp; Integrations</h3><span class="when">2017 – Present</span></div>
+        <div class="org">Songo Holdings · technology consultancy, in partnership with DBetta Services</div>
+        <ul>
+          <li>Built a <b>conversational chat API</b> over laboratory test data for KEBS, Analabs and SKOL (Rwanda).</li>
+          <li>Built a Spring Boot + Angular reporting platform that <b>reduced manual reporting at KEBS by 80%</b> countrywide.</li>
+        </ul>
+      </div>
+      <div class="role">
+        <div class="role-head"><h3>Software Engineering Consultant</h3><span class="when">Jun 2021 – Feb 2026</span></div>
+        <div class="org">Mastercard · FarmPass</div>
+        <ul>
+          <li>Helped architect FarmPass's move to <b>OAuth2</b> with minimal disruption to users and integrations.</li>
+          <li>Co-built a <b>Spring Batch</b> pipeline that processes <b>1M+ records in under 10 minutes</b>.</li>
+          <li>Created shared Angular components adopted across the team, and optimised Angular and Spring Boot microservices for scale.</li>
+        </ul>
+      </div>
+      <div class="role">
+        <div class="role-head"><h3>Software Engineering Consultant</h3><span class="when">Nov 2020 – May 2021</span></div>
+        <div class="org">Cellulant · Digital Team</div>
+        <ul>
+          <li>Rewrote blocking microservices using <b>Project Reactor</b>. Managed Kubernetes deployments and GitLab CI.</li>
+        </ul>
+      </div>
+      <div class="role">
+        <div class="role-head"><h3>Software Developer → Lead Software Engineer</h3><span class="when">Feb 2017 – Oct 2020</span></div>
+        <div class="org">Turnkey Africa · Portals &amp; APIs</div>
+        <ul>
+          <li>Built a customisable <b>premium computation engine</b>, migrating Oracle PL/SQL to Java. It powers the core insurance system and its portals.</li>
+          <li>Led a development team. Integrated <b>M-PESA and card payments</b>, email and SMS for 6+ insurers.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge live">Live</span>
+        <h3>Internet Billing Platform</h3>
+        <p>An ISP billing system that automatically connects and disconnects subscribers based on payment status. It is integrated with MikroTik routers, M-PESA and other payment gateways.</p>
+        <div class="tags"><span>MikroTik</span><span>M-PESA</span><span>Payments</span><span>Automation</span></div>
+      </article>
+      <article class="card">
+        <span class="badge wip">In progress</span>
+        <h3>Insurance Premium DSL</h3>
+        <p>A language for modelling insurance premium computation, built on years of work on production premium engines, with an AI-guided setup experience.</p>
+        <div class="tags"><span>DSL</span><span>AI</span><span>InsurTech</span></div>
+      </article>
+      <article class="card">
+        <h3><a href="https://github.com/DBetta/clean-architecture-poc" target="_blank" rel="noopener">clean-architecture-poc</a></h3>
+        <p>A worked example of clean architecture in Kotlin.</p>
+        <div class="tags"><span>Kotlin</span><span>Architecture</span></div>
+      </article>
+      <article class="card">
+        <h3><a href="https://github.com/DBetta/microservices-database-poc" target="_blank" rel="noopener">microservices-database-poc</a></h3>
+        <p>A proof of concept comparing microservice communication at the database level and at the API level.</p>
+        <div class="tags"><span>Kotlin</span><span>Microservices</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Toolbox</h2>
+    <div class="skills">
+      <div class="ai"><h3>AI &amp; LLM</h3><div class="tags"><span>RAG</span><span>Embeddings</span><span>Conversational APIs</span><span>AI-guided workflows</span><span>LLM integration</span></div></div>
+      <div><h3>Backend</h3><div class="tags"><span>Java</span><span>Kotlin</span><span>Spring Boot</span><span>WebFlux / Reactor</span><span>Spring Batch</span><span>Spring Cloud</span><span>NestJS</span><span>DSL design</span></div></div>
+      <div><h3>Frontend</h3><div class="tags"><span>Angular</span><span>NgRx</span><span>TypeScript</span><span>React</span><span>Vue.js</span></div></div>
+      <div><h3>Data &amp; Cloud</h3><div class="tags"><span>PostgreSQL</span><span>Oracle PL/SQL</span><span>MongoDB</span><span>Docker</span><span>Kubernetes</span><span>GitLab CI</span><span>AWS</span><span>GCP</span></div></div>
+    </div>
+  </section>
+
+  <div class="contact" id="contact">
+    <div>
+      <h2>Let's build something</h2>
+      <p>Open to senior engineering roles and AI integration work: on-site, hybrid or remote.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="mailto:denisbgitonga@gmail.com">denisbgitonga@gmail.com</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/denis-gitonga-083ba3a7/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</main>
+
+<footer>© <span id="y">2026</span> Denis Gitonga · Nairobi, Kenya</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
